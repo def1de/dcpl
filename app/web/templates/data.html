@@ -23,7 +23,7 @@
         <tbody>
             {% for el in data.passwords %}
             <tr>
-                <th scope="row">{{loop.counter}}</th>
+		<th scope="row">{{el.index}}</th>
                 <td>{{el.url}}</td>
                 <td>{{el.login}}</td>
                 <td>{{el.password}}</td>
