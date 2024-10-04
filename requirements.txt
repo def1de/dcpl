@@ -19,7 +19,7 @@ packaging==23.2
 python-dotenv==1.0.0
 pytz==2023.3.post1
 referencing==0.30.2
-requests==2.31.0
+requests==2.32.2
 rpds-py==0.10.3
 SQLAlchemy==2.0.21
 typing_extensions==4.8.0
